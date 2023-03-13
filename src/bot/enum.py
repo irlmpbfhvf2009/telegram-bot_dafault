@@ -1,0 +1,14 @@
+from enum import Enum
+
+class General(Enum):
+    START = 0
+    WORKFLOW = 1
+    GROUP_TAB = 2
+
+class Admin(Enum):
+    CHANGEPASSWORD = 0
+    SETINVITEFRIENDSQUANTITY = 1
+    SETINVITEFRIENDSAUTOCLEARTIME = 2
+    SELECTGROUP = 3
+    DELETEMSGFORSECOND = 4
+    GETTHERIGHT = 5
