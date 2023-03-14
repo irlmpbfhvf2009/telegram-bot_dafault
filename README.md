@@ -5,6 +5,7 @@
 ###### 開發事項  
 >[py常用指令](#py常用指令)  
 [專案結構](#專案結構)  
+[專案架構](#專案架構)  
 [py檔案](#py檔案)  
 [SQL](#SQLITE3)  
 [功能進度](#功能進度)  
@@ -96,6 +97,7 @@ Telegram-Bot/
 &emsp;&emsp;|-- web/  
 &emsp;&emsp;&emsp;&emsp;|-- app.py  
 
+###### 專案架構  
 
 
 ## py檔案
