@@ -97,10 +97,10 @@ Telegram-Bot/
 &emsp;&emsp;|-- web/  
 &emsp;&emsp;&emsp;&emsp;|-- app.py  
 
-## 專案架構  
-#### 这是一个使用Python编写的Telegram机器人程序。其中包含了一个ConversationHandler，用于处理机器人与用户之间的会话交互。下面是一种可能的程序架构：  
-######
+## 这是一个使用Python编写的Telegram机器人程序。其中包含了一个ConversationHandler，用于处理机器人与用户之间的会话交互。下面是一种可能的程序架构：  
+####  
 1.用户交互逻辑
+2.123
 
 
 ## py檔案
