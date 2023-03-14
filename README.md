@@ -63,7 +63,7 @@ pyi-makespec -F -w main.py 生成spec檔
 pyinstaller main.spec
 
 
-###### 專案結構  
+## 專案結構  
 Telegram-Bot/  
 |-- main.py  
 |-- main.spec  
@@ -97,10 +97,27 @@ Telegram-Bot/
 &emsp;&emsp;|-- web/  
 &emsp;&emsp;&emsp;&emsp;|-- app.py  
 
-## 这是一个使用Python编写的Telegram机器人程序。其中包含了一个ConversationHandler，用于处理机器人与用户之间的会话交互。下面是一种可能的程序架构：  
-####  
-1.用户交互逻辑
-2.123
+## 这是一个使用Python编写的Telegram机器人程序。其中包含了一个ConversationHandler，用于处理机器人与用户之间的会话交互。 
+#### 1.用户交互逻辑
+* start：用户发送/start命令，启动机器人，进入START状态
+* choose：用户点击inline keyboard上的按钮，根据不同按钮的callback_data进入不同的状态
+* wordFlow：用户发送文本消息，根据当前状态进入不同的状态，进行不同的操作
+* changePassword：用户进入修改密码流程，输入旧密码和新密码，保存新密码并返回上一级状态
+* setInviteFriendsQuantity：用户进入设置邀请好友数量流程，输入数量，保存数量并返回上一级状态
+* setInviteFriendsAutoClearTime：用户进入设置自动清理邀请好友时间流程，输入时间，保存时间并返回上一级状态
+* selectGroup：用户进入选择群组流程，输入群组名称，保存群组名称并返回上一级状态
+* deleteMsgForSecond：用户进入设置撤回消息时间流程，输入时间，保存时间并返回上一级状态
+* getTheRight：用户进入抢答流程，机器人向群组发送抢答问题，第一个回答的用户获胜，保存获胜用户信息并返回上一级状态
+* adminWork：用户进入管理员工作流程，输入命令，执行相应的管理员操作并返回上一级状态
+* setInvitemembers：用户进入设置邀请会员流程，输入会员ID，保存会员ID并返回上一级状态
+* setInviteearnedoutstand：用户进入设置邀请奖励流程，输入奖励金额，保存奖励金额并返回上一级状态
+* setInvitesettlementBonus：用户进入设置邀请结算流程，输入结算金额，保存结算金额并返回上一级状态
+* setContactPerson：用户进入设置联系人流程，输入联系人信息，保存联系人信息并返回上一级状态
+* billing：用户进入计费流程，进行计费操作，计费成功后返回上一级状态
+* queryBilling：用户进入查询计费流程，进行计费查询操作，查询成功后返回上一级状态
+* groupSetAdvertiseTime：用户进入设置群组广告时间流程，输入广告时间，保存广告时间并返回上一级状态
+* groupSetAdvertiseContent：用户进入设置群组广告内容流程，输入广告内容，保存广告内容并返回上一级状态
+* groupSpecifyDeleteAdvertiseContent：用户进入指定删除群组广告内容流程，输入要删除的广告内容ID，删除广告内容并返回上一级状态
 
 
 ## py檔案
