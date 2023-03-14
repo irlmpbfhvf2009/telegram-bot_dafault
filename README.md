@@ -3,10 +3,8 @@
 [开启监听频道权限](#开启监听频道权限)  
 
 ###### 開發事項  
->[py常用指令](#py常用指令)  
-[專案結構](#專案結構)  
+>[專案結構](#專案結構)  
 [專案架構](#專案架構)  
-[py檔案](#py檔案)  
 [SQL](#SQLITE3)  
 [功能進度](#功能進度)  
 
@@ -53,14 +51,6 @@
 ## bot使用方法
 >config.ini 填入Token  
 run main.py 執行機器人  
-
-
-
-## py常用指令
-> pip install -r requirements.txt 載入必要的lib  
-pyi-makespec -F -w -i tkinter/bot.ico main.py 生成spec檔  
-pyi-makespec -F -w main.py 生成spec檔  
-pyinstaller main.spec
 
 
 ## 專案結構  
@@ -118,16 +108,6 @@ Telegram-Bot/
 * groupSetAdvertiseTime：用户进入设置群组广告时间流程，输入广告时间，保存广告时间并返回上一级状态
 * groupSetAdvertiseContent：用户进入设置群组广告内容流程，输入广告内容，保存广告内容并返回上一级状态
 * groupSpecifyDeleteAdvertiseContent：用户进入指定删除群组广告内容流程，输入要删除的广告内容ID，删除广告内容并返回上一级状态
-
-
-## py檔案
->main.py  主容器  
-app.py  網頁程序  
-bot.py bot应用  
-utils.py  工具  
-_button.py  內聯鍵盤封裝  
-_config.py  組態初始化  
-_sql.py  資料處理  
 
 
 ## SQLITE3
