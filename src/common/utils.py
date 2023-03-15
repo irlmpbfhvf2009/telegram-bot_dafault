@@ -1,11 +1,12 @@
-import socket,os,logging
+import socket,os,logging,datetime
+import tkinter
 
-class Logging(logging.Logger):
+class Logger(logging.Logger):
     def __init__(self,
                  name='root',
-                 logger_level= 'INFO',
+                 logger_level= None,
                  file=None,
-                 guiFile=None,
+                #  guiFile=None,
                  logger_format = " [%(asctime)s]  %(levelname)s %(filename)s [ line:%(lineno)d ] %(message)s"
                  ):
         super().__init__(name)
@@ -19,24 +20,29 @@ class Logging(logging.Logger):
             file_handler.setLevel(logger_level)
             file_handler.setFormatter(fmt)
             self.addHandler(file_handler)
-        if guiFile:
-            gui_file_handler = logging.FileHandler(guiFile,'a','utf-8')
-            gui_file_handler.setLevel(logger_level)
-            gui_file_handler.setFormatter(fmt)
-            self.addHandler(gui_file_handler)
+        # if guiFile:
+        #     gui_file_handler = logging.FileHandler(guiFile,'a','utf-8')
+        #     gui_file_handler.setLevel(logger_level)
+        #     gui_file_handler.setFormatter(fmt)
+        #     self.addHandler(gui_file_handler)
 
         self.stream_handler = logging.StreamHandler()
         self.stream_handler.setLevel(logger_level)
         self.stream_handler.setFormatter(fmt)
         self.addHandler(self.stream_handler)
         
-class Dirs():
-    def makedirs(path=None):
+
+class DirsUtils():
+    def __init__(self):
+        self.initalizeProjectDirectory = self.createInitialFolder()
+        self.currentPath = self.currentDirectory()
+        
+    def makedirs(self,path=None):
         if not os.path.isdir(path):
             return os.makedirs(path, mode=511, exist_ok=False)
 
     # 當前目錄
-    def currentDirectory():
+    def currentDirectory(self):
         # return os.path.abspath(os.path.dirname(__file__)) #當前檔案位置
         return os.getcwd().replace('\\','/') 
 
@@ -47,6 +53,11 @@ class Dirs():
     # 上上級目錄
     def doubleParentDirectory():
         return os.path.abspath(os.path.join(os.getcwd(), "../.."))
+    
+    # 初始化專案目錄
+    def createInitialFolder(self):
+        currentPath = self.currentDirectory() + '/log'
+        self.makedirs(path=currentPath)
 
 class CheckPort():
     def chick_port(port=None, host='127.0.0.1'):
@@ -63,7 +74,7 @@ class CheckPort():
                 s.close()
 
 
-class Log:
+class ReadLog:
     def __init__(self):
         self._log=self.get_log()
     
@@ -111,3 +122,6 @@ class Log:
         }
         line_number.append(len(log_data))
         return _log
+    
+DirsUtils().initalizeProjectDirectory
+logger = Logger(logger_level='DEBUG',file='log/'+str(datetime.datetime.now().date())+'.log')

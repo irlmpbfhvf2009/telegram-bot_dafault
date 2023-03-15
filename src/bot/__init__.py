@@ -1,6 +1,8 @@
 from telegram.ext import Updater,Filters,CommandHandler,MessageHandler,ConversationHandler,CallbackQueryHandler,ChatMemberHandler
-from src.bot.enum import STATES,BOTEnum
-from src.bot.callbacks.__init__ import callbacks as cb
+from src.common.enum import STATES,BOTEnum
+from src.bot.callbacks.__init__ import callbacks
+from src.common.utils import logger
+import time
 
 class Telegram_Bot():
     def __init__(self):
@@ -9,12 +11,12 @@ class Telegram_Bot():
         self.dispatcher = self.updater.dispatcher
         self.dispatcher.add_handler(
             ConversationHandler(
-                entry_points=[CommandHandler('start', cb.start),
+                entry_points=[CommandHandler('start', callbacks.start),
                                 # CallbackQueryHandler(choose),
                                 # MessageHandler(filters=Filters.all & (~ Filters.command), callback=wordFlow)
                             ],
                 states={
-                    STATES.START:[CommandHandler('start', cb.start)],
+                    STATES.START:[CommandHandler('start', callbacks.start)],
                     # STATES.WORKFLOW: [MessageHandler(filters=Filters.text & (~ Filters.command), callback=wordFlow)],
                     # STATES.CHANGEPASSWORD: [MessageHandler(filters=Filters.text & (~ Filters.command), callback=changePassword)],
                     # STATES.SETINVITEFRIENDSQUANTITY: [MessageHandler(filters=Filters.text & (~ Filters.command), callback=setInviteFriendsQuantity)],
@@ -34,7 +36,7 @@ class Telegram_Bot():
                     # STATES.GROUPSETADVERTISETIME: [MessageHandler(filters=Filters.text & (~ Filters.command), callback=groupSetAdvertiseTime)],
                     # STATES.GROUPSETADVERTISECONTENT: [MessageHandler(filters=Filters.text & (~ Filters.command), callback=groupSetAdvertiseContent)],
                     # STATES.GROUPSPECIFYDELETEADVERTISECONTENT: [MessageHandler(filters=Filters.text & (~ Filters.command), callback=groupSpecifyDeleteAdvertiseContent)],
-                },fallbacks=[CommandHandler('start', cb.start),
+                },fallbacks=[CommandHandler('start', callbacks.start),
                             #  CallbackQueryHandler(choose),MessageHandler(filters=Filters.text & (~ Filters.command), callback=wordFlow)
                              ]))
 
@@ -44,8 +46,12 @@ class Telegram_Bot():
         # self.dispatcher.add_handler(ChatMemberHandler(channel, ChatMemberHandler.MY_CHAT_MEMBER))
         
 def run ():
+    start = time.time()
     tb=Telegram_Bot()
     tb.updater.start_polling()
+    end = time.time()
+    logger.info(f"BOT : {tb.updater.bot.username} 已启动  執行時間：{round((end - start),2)}秒")
+
     tb.updater.idle()
     tb.updater.stop()
         

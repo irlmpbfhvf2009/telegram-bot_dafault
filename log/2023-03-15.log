@@ -1,0 +1,52 @@
+ [2023-03-15 09:03:08,375]  INFO __init__.py [ line:53 ] BOT : CCP1121_BOT 已启动  執行時間：0.91秒
+ [2023-03-15 09:09:27,830]  INFO __init__.py [ line:53 ] BOT : CCP1121_BOT 已启动  執行時間：0.97秒
+ [2023-03-15 09:14:18,512]  INFO __init__.py [ line:53 ] BOT : CCP1121_BOT 已启动  執行時間：0.95秒
+ [2023-03-15 09:14:35,630]  INFO __init__.py [ line:48 ] 日志初始化完成
+ [2023-03-15 09:14:38,165]  INFO __init__.py [ line:53 ] BOT : CCP1121_BOT 已启动  執行時間：0.9秒
+ [2023-03-15 09:17:27,123]  INFO __init__.py [ line:51 ] 日志初始化完成
+ [2023-03-15 09:17:30,852]  INFO __init__.py [ line:53 ] BOT : CCP1121_BOT 已启动  執行時間：0.91秒
+ [2023-03-15 09:20:43,708]  INFO __init__.py [ line:44 ] 日志初始化完成
+ [2023-03-15 09:31:05,520]  INFO __init__.py [ line:42 ] 日志初始化完成
+ [2023-03-15 09:31:08,229]  INFO __init__.py [ line:53 ] BOT : CCP1121_BOT 已启动  執行時間：0.91秒
+ [2023-03-15 09:33:15,128]  INFO __init__.py [ line:41 ] 日志初始化完成
+ [2023-03-15 09:33:17,917]  INFO __init__.py [ line:53 ] BOT : CCP1121_BOT 已启动  執行時間：0.86秒
+ [2023-03-15 09:35:09,575]  INFO __init__.py [ line:41 ] 日志初始化完成
+ [2023-03-15 09:35:11,115]  INFO gui_utils.py [ line:59 ] Web process terminated
+ [2023-03-15 09:35:16,271]  INFO gui_utils.py [ line:59 ] Web process terminated
+ [2023-03-15 09:35:18,252]  INFO gui_utils.py [ line:44 ] Bot process terminated
+ [2023-03-15 09:35:31,100]  INFO gui_utils.py [ line:44 ] Bot process terminated
+ [2023-03-15 09:35:44,583]  INFO gui_utils.py [ line:44 ] Bot process terminated
+ [2023-03-15 09:35:48,739]  INFO __init__.py [ line:41 ] 日志初始化完成
+ [2023-03-15 09:35:53,185]  INFO __init__.py [ line:53 ] BOT : CCP1121_BOT 已启动  執行時間：0.89秒
+ [2023-03-15 09:36:00,373]  INFO gui_utils.py [ line:44 ] Bot process terminated
+ [2023-03-15 09:37:18,931]  INFO gui_utils.py [ line:44 ] Bot process terminated
+ [2023-03-15 09:37:25,607]  INFO gui_utils.py [ line:44 ] Bot process terminated
+ [2023-03-15 09:41:19,719]  INFO __init__.py [ line:41 ] 日志初始化完成
+ [2023-03-15 09:41:22,407]  INFO __init__.py [ line:53 ] BOT : CCP1121_BOT 已启动  執行時間：0.89秒
+ [2023-03-15 09:41:26,692]  INFO gui_utils.py [ line:44 ] Bot process terminated
+ [2023-03-15 09:43:05,082]  INFO __init__.py [ line:41 ] 日志初始化完成
+ [2023-03-15 09:43:07,652]  INFO __init__.py [ line:53 ] BOT : CCP1121_BOT 已启动  執行時間：0.86秒
+ [2023-03-15 09:43:09,118]  INFO gui_utils.py [ line:49 ] Bot process terminated
+ [2023-03-15 09:45:26,870]  INFO __init__.py [ line:41 ] 日志初始化完成
+ [2023-03-15 09:45:29,537]  INFO __init__.py [ line:53 ] BOT : CCP1121_BOT 已启动  執行時間：0.91秒
+ [2023-03-15 09:45:31,019]  INFO gui_utils.py [ line:50 ] Bot process terminated
+ [2023-03-15 09:54:27,532]  INFO __init__.py [ line:41 ] 日志初始化完成
+ [2023-03-15 09:54:31,088]  INFO __init__.py [ line:53 ] BOT : CCP1121_BOT 已启动  執行時間：0.91秒
+ [2023-03-15 09:54:32,689]  INFO gui_utils.py [ line:45 ] Bot process terminated
+ [2023-03-15 09:58:21,756]  INFO __init__.py [ line:41 ] 日志初始化完成
+ [2023-03-15 09:58:24,552]  INFO __init__.py [ line:53 ] BOT : CCP1121_BOT 已启动  執行時間：0.91秒
+ [2023-03-15 09:58:27,306]  INFO gui_utils.py [ line:45 ] Bot process terminated
+ [2023-03-15 10:01:01,780]  INFO __init__.py [ line:41 ] 日志初始化完成
+ [2023-03-15 10:03:27,871]  INFO __init__.py [ line:41 ] 日志初始化完成
+ [2023-03-15 10:03:30,463]  INFO __init__.py [ line:53 ] BOT : CCP1121_BOT 已启动  執行時間：0.98秒
+ [2023-03-15 10:03:31,129]  INFO gui_utils.py [ line:46 ] Bot process terminated
+ [2023-03-15 10:06:28,316]  INFO __init__.py [ line:41 ] <StreamHandler <stderr> (DEBUG)>
+ [2023-03-15 10:06:28,318]  INFO __init__.py [ line:42 ] 日志初始化完成
+ [2023-03-15 10:06:30,805]  INFO __init__.py [ line:53 ] BOT : CCP1121_BOT 已启动  執行時間：1.0秒
+ [2023-03-15 10:06:36,645]  INFO gui_utils.py [ line:46 ] Bot process terminated
+ [2023-03-15 10:16:07,146]  INFO __init__.py [ line:40 ] 日志初始化完成
+ [2023-03-15 10:16:19,624]  INFO __init__.py [ line:40 ] 日志初始化完成
+ [2023-03-15 10:16:58,508]  INFO __init__.py [ line:40 ] 日志初始化完成
+ [2023-03-15 10:17:15,388]  INFO __init__.py [ line:53 ] BOT : CCP1121_BOT 已启动  執行時間：0.93秒
+ [2023-03-15 10:20:37,966]  INFO __init__.py [ line:40 ] 日志初始化完成
+ [2023-03-15 10:21:19,666]  INFO __init__.py [ line:40 ] 日志初始化完成

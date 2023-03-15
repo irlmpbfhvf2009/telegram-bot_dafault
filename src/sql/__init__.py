@@ -1,6 +1,6 @@
 import sqlite3,json,time
 from decimal import Decimal
-from src.sql.enum import DBHPEnum
+from common.enum import DBHPEnum
 
 '''
 sqlite3數據操作封裝

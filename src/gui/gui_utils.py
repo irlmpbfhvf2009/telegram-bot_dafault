@@ -1,6 +1,7 @@
-from src.gui.enum import GUIEnum
+from src.common.enum import GUIEnum
 from src.bot.__init__ import run as bot_run
 from multiprocessing import Process
+from src.common.utils import logger
 import time
 
 
@@ -18,7 +19,12 @@ class common():
             except:
                 break
             
-
+    def ctrlEvent(self,event):
+        if(12==event.state and event.keysym=='c' ):
+            return
+        else:
+            return "break"
+        
 class bot_process():
     def __init__(self,tk):
         self.tk = tk
@@ -31,10 +37,13 @@ class bot_process():
         
         
     def stop_bot_process(self):
-        self.tk.label_botstate.config(text=GUIEnum.BOT_STATE_STOP.value , fg="red",anchor="w", justify="left")
-        self.tk.button_botstate.config(text=GUIEnum.BOT_BTN_START.value,command=self.start_bot_process)
-        self.bot.terminate()
-        self.bot.join()
+        print(self.bot.is_alive())
+        if self.bot.is_alive():
+            self.tk.label_botstate.config(text=GUIEnum.BOT_STATE_STOP.value , fg="red",anchor="w", justify="left")
+            self.tk.button_botstate.config(text=GUIEnum.BOT_BTN_START.value,command=self.start_bot_process)
+            self.bot.terminate()
+            self.bot.join()
+            logger.info("Bot process terminated")
 
 class web_process():
     def __init__(self,tk):
@@ -49,4 +58,4 @@ class web_process():
     def stop_web_process(self):
         self.tk.label_webstate.config(text=GUIEnum.WEB_STATE_STOP.value, fg="red",anchor="w", justify="left")
         self.tk.button_webstate.config(text=GUIEnum.WEB_BTN_START.value,command=self.start_web_process)
-
+        logger.info("Web process terminated")

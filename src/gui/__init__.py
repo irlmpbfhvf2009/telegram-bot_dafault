@@ -1,9 +1,11 @@
 import threading,tkinter,os,datetime,inspect,ctypes
 import tkinter.font as tkFont
 from tkinter import messagebox,ttk
-from src.common.utils import Log,Logging
-from src.gui.enum import GUIEnum
-from src.gui import gui_utils
+from src.common.enum import GUIEnum
+from src.gui.gui_utils import bot_process,web_process,common
+from src.common.utils import logger
+import logging
+
 
 class App(tkinter.Tk):
     def __init__(self):
@@ -33,7 +35,9 @@ class App(tkinter.Tk):
         
         # 日誌輸出
         self.normalTextBox = tkinter.Text(self, width=98,height=10)
-        self.normalTextBox.bind("<Key>", lambda e: self.ctrlEvent(e))
+        self.normalTextBox.bind("<Key>", lambda e: common.ctrlEvent(e))
+        
+        logger.info("日志初始化完成")
         
         # 布局
         self.label_time.place(x=50, y=20)
@@ -57,6 +61,12 @@ class App(tkinter.Tk):
         
         self.protocol('WM_DELETE_WINDOW', self.wm_delete_window)
         
+        print("GUI初始化完成")
+        print(logging.Handler)
+        print("GUI初始化完成")
+        print(logger.handlers[1].emit())
+    
+        
         
     def center_window(self,w, h):
         ws = self.winfo_screenwidth()
@@ -70,14 +80,14 @@ class App(tkinter.Tk):
         self.normalTextBox.see(tkinter.END)
         
     def updateTime(self):
-        gui_utils.common(self).updateTime()
+        common(self).updateTime()
     
     def bot_process(self):
-        self.bot = gui_utils.bot_process(self)
+        self.bot = bot_process(self)
         self.bot.start_bot_process()
     
     def web_process(self):
-        return gui_utils.web_process(self)
+        return web_process(self)
 
     def wm_delete_window(self):
         try:
@@ -92,4 +102,13 @@ class App(tkinter.Tk):
     def run(self):
         self.mainloop()
     
-    
+class TkinterHandler(logging.Handler):
+    def __init__(self, text_widget):
+        super().__init__()
+        self.text_widget = text_widget
+    def emit(self, record):
+        msg = self.format(record)
+        self.text_widget.config(state=tkinter.NORMAL)
+        self.text_widget.insert(tkinter.END, msg + '\n')
+        self.text_widget.config(state=tkinter.DISABLED)
+        self.text_widget.yview(tkinter.END)

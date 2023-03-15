@@ -1,8 +1,37 @@
 from enum import Enum
 
+class DBHPEnum(Enum):
+    DB_NAME = "telegram-bot.db"
+    BOT_STATE = "BOT状态：未启动"
+    WEB_STATE = "网页状态：未启动"
+    BOT_USERNAME = "机器人："
+    VERSION = "版本号："
+    TOKEN = "TOKEN："
+    APP_RUN = "开启网页"
+    BOT_RUN = "启动BOT"
+    
+class GUIEnum(Enum):
+    GUI_TITLE = "telegram-bot"
+    BOT_USERNAME = "机器人："
+    VERSION = "版本号："
+    TOKEN = "TOKEN："
+    
+    BOT_STATE_START = "BOT状态：running"
+    BOT_STATE_STOP = "BOT状态：stop"
+    BOT_BTN_START = "启动BOT"
+    BOT_BTN_STOP = "停止BOT"
+    
+    WEB_STATE_START = "WEB状态：running"
+    WEB_STATE_STOP = "WEB状态：stop"
+    WEB_BTN_START = "开启网页"
+    # WEB_BTN_STOP = "关闭网页"
+    
 class BOTEnum(Enum):
     TOKEN = "5855785269:AAH9bvPpYudd2wSAvMnBTiKakCeoB92_Z_8"
     
+class CALLBACKSENUM(Enum):
+    START = "What con this bot do?\nPlease tap on START"
+
 class STATES(Enum):
     # 初始状态，通过 /start 命令或点击按钮触发。
     START = 0
