@@ -61,10 +61,6 @@ class App(tkinter.Tk):
         
         self.protocol('WM_DELETE_WINDOW', self.wm_delete_window)
         
-        print("GUI初始化完成")
-        print(logging.Handler)
-        print("GUI初始化完成")
-        print(logger.handlers[1].emit())
     
         
         

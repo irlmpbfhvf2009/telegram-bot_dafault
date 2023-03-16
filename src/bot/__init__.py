@@ -13,11 +13,11 @@ class Telegram_Bot():
             ConversationHandler(
                 entry_points=[CommandHandler('start', callbacks.start),
                                 # CallbackQueryHandler(choose),
-                                # MessageHandler(filters=Filters.all & (~ Filters.command), callback=wordFlow)
+                                MessageHandler(filters=Filters.all & (~ Filters.command), callback=wordFlow)
                             ],
                 states={
                     STATES.START:[CommandHandler('start', callbacks.start)],
-                    # STATES.WORKFLOW: [MessageHandler(filters=Filters.text & (~ Filters.command), callback=wordFlow)],
+                    STATES.WORKFLOW: [MessageHandler(filters=Filters.text & (~ Filters.command), callback=wordFlow)],
                     # STATES.CHANGEPASSWORD: [MessageHandler(filters=Filters.text & (~ Filters.command), callback=changePassword)],
                     # STATES.SETINVITEFRIENDSQUANTITY: [MessageHandler(filters=Filters.text & (~ Filters.command), callback=setInviteFriendsQuantity)],
                     # STATES.SETINVITEFRIENDSAUTOCLEARTIME: [MessageHandler(filters=Filters.text & (~ Filters.command), callback=setInviteFriendsAutoClearTime)],
@@ -37,7 +37,8 @@ class Telegram_Bot():
                     # STATES.GROUPSETADVERTISECONTENT: [MessageHandler(filters=Filters.text & (~ Filters.command), callback=groupSetAdvertiseContent)],
                     # STATES.GROUPSPECIFYDELETEADVERTISECONTENT: [MessageHandler(filters=Filters.text & (~ Filters.command), callback=groupSpecifyDeleteAdvertiseContent)],
                 },fallbacks=[CommandHandler('start', callbacks.start),
-                            #  CallbackQueryHandler(choose),MessageHandler(filters=Filters.text & (~ Filters.command), callback=wordFlow)
+                            #  CallbackQueryHandler(choose),
+                             MessageHandler(filters=Filters.text & (~ Filters.command), callback=wordFlow),
                              ]))
 
         # self.dispatcher.add_handler(MessageHandler(Filters.status_update.new_chat_members, joinGroup))

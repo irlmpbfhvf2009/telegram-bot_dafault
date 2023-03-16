@@ -1,0 +1,5 @@
+ [2023-03-16 19:31:58,135]  INFO __init__.py [ line:40 ] 日志初始化完成
+ [2023-03-16 19:32:02,463]  INFO __init__.py [ line:40 ] 日志初始化完成
+ [2023-03-16 19:32:23,095]  INFO __init__.py [ line:40 ] 日志初始化完成
+ [2023-03-16 19:32:33,640]  INFO __init__.py [ line:53 ] BOT : CCP1121_BOT 已启动  執行時間：0.89秒
+ [2023-03-16 19:33:02,502]  INFO gui_utils.py [ line:46 ] Bot process terminated
